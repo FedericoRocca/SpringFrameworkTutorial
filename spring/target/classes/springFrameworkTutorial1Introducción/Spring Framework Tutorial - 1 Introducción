@@ -1,0 +1,74 @@
+Spring Framework Tutorial - 1 Introducción
+    DIP (Principio de inversión de dependencia)
+        - Los modulos de alto nivel no deben depender de los modulos de bajo nivel
+        - Abstracciones sobre implementaciones
+        - El patron IoC (Inversion of Control) es una aplicación de este principio
+
+    IoC (Inversión de control)
+        - "No nos llames, nosotros te llamamos" (Principio de Hollywood)
+        - Utilizando un Service Locator (Patron de diseño de software) utilizando eventos, delegaciones o DI (Dependency Injection)
+
+    DI (Inyección de dependencias)
+        - Patrón de diseño de software
+        - Subtipo de IoC
+        - Código desacoplado y facil de mantener
+        - Provee a los objetos lo que el objeto necesita
+            - Constructor
+            - Propiedad (set)
+            - Servicio/Interfaz
+
+    Spring Core Container
+        - Es un IoC Container
+        - Gestiona el ciclo de vida de los objetos (beans)
+            - Creación
+            - Enlace
+            - Configuración
+            - Destrucción
+
+    Otros IoC  Container
+        - Java
+            - PicoContainer
+            - NanoContainer
+            - Peapod
+            - Gravity
+            - Google Guice
+        - .Net
+            - Unity
+            - Autofac
+            - Ninject
+            - Structure map
+    
+    Módulos
+        - Data Access/Integration
+            - JDBC
+            - ORM
+            - OXM
+            - JMS
+            - Transactions
+
+        - Web
+            - WebSocket
+            - Servlet
+            - Web
+            - Portlet
+
+        - AOP
+
+        - Core Container
+            - Beans
+            - Core
+            - Context
+            - SpEL
+
+        - Test
+
+    - Ventajas
+        - Flexibilidad (Integración con otras herramientas)
+        - Código ordenado
+        - Uso de anotaciones
+        - DI
+        - Estandares de programación
+
+    - Mitos
+        - XML Verboso
+        - Container no es ligero

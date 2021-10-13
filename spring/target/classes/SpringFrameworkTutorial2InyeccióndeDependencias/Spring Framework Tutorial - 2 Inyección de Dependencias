@@ -1,0 +1,95 @@
+Spring Framework Tutorial - 2 Inyección de Dependencias
+    - Subtipo de IoC
+
+    - Ejemplo sin inyección de dependencias
+
+        public class Messi
+        {
+            Barcelona bar = new Barcelona();
+
+            public void mostrarEquipo()
+            {
+                bar.mostrar();
+            }
+        }
+
+        public class Barcelona
+        {
+            public void mostrar()
+            {
+                System.out.println("Barcelona FC");
+            }
+        }
+
+            - Fuertemente ligado a la clase Barcelona
+
+    - Ejemplo con inyección de dependencias (simple)
+
+        public class Messi
+        {
+            private Barcelona  barcelona;
+
+            public Messi(Barcelona bar)
+            {
+                this.barcelona = bar;
+            }
+
+            public vod setBarcelona(Barcelona barcelona)
+            {
+                this.barcelona = barcelona;
+            }
+        }
+
+        Messi m = new Messi(new Barcelona());
+        //m.setEquipo(new Barcelona());
+
+            - DI a traves de constructor o a traves de set
+
+
+    - Ejemplo con inyección de dependencias (Interfaz)
+
+        public class Messi
+        {
+            private IEquipo equipo;
+
+            public Messi(IEquipo equipo)
+            {
+                this.equipo = equipo;
+            }
+
+            public void setEquipo(IEquipo equipo)
+            {
+                this.equipo = equipo;
+            }
+
+            public void mostrarEquipo()
+            {
+                equipo.mostrar();
+            }
+        }
+
+        public interface IEquipo
+        {
+            public void mostrar();
+        }
+
+        public class Barcelona implements IEquipo
+        {
+            public void mostrar()
+            {
+                System.out.println("Barcelona FC");
+            }
+        }
+
+        Messi m = new Messi(new Barcelona());
+        //m.setEquipo(new Barcelona());
+        m.mostrarEquipo();
+
+        Messi ms = new Messi(new Juventus());
+        //ms.setEquipo(new Juventus());
+        ms.mostrarEquipo();
+
+            - Escalabilidad , desacoplamiento, flexible y mayor mediante las interfaces
+
+    - Spring Container
+        - Encargado de gestionar las dependencias de un objeto en particular
