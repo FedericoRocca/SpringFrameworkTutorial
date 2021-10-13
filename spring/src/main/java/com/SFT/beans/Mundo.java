@@ -1,7 +1,10 @@
-package com.SpringFrameworkTutorial.beans;
+package com.SFT.beans;
+
+import org.springframework.beans.factory.annotation.Value;
 
 public class Mundo {
 
+	@Value("Hola mundo!")
 	private String saludo;
 
 	public String getSaludo() {
