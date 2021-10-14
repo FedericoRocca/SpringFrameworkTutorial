@@ -2,11 +2,8 @@ package com.SFT.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.SFT.beans.AppConfig;
-import com.SFT.beans.AppConfig2;
 import com.SFT.beans.Mundo;
 import com.SFT.beans.Persona;
 
@@ -24,7 +21,13 @@ public class App {
 		System.out.println(m.getSaludo());
 		
 		Persona per = (Persona) appContext.getBean("persona");
-		System.out.println("ID: " + per.getId() + ", nombre: " + per.getNombre() + ", apodo: " + per.getApodo());
+		System.out.println(
+				"ID: " + per.getId() + 
+				", nombre: " + per.getNombre() + 
+				", apodo: " + per.getApodo() + 
+				", pais: " + per.getPais().getNombre() + 
+				", ciudad: " + per.getPais().getCiudad().getNombre()
+				);
 		
 		((ConfigurableApplicationContext)appContext).close();
 	}
