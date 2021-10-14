@@ -1,5 +1,8 @@
 package com.SFT.beans;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Persona {
 	
 	private int id;
@@ -8,11 +11,13 @@ public class Persona {
 	private Pais pais;
 	private Ciudad ciudad;
 	
+	@PostConstruct
 	private void initBean()
 	{
 		System.out.println("Antes de inicializar el bean");
 	}
 	
+	@PreDestroy
 	private void destroyBean()
 	{
 		System.out.println("Bean a punto de ser destruido");

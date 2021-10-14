@@ -2,12 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	>
 	
+	<!-- Configuracion global que puede colgar en el tag <beans>-->
+	<!-- default-init-method="initBean" -->
+	<!-- default-destroy-method="destroyBean" -->
 	
-	default-init-method="initBean"
-	default-destroy-method="destroyBean"
-	><!-- Configuracion global -->
-	
+	<!-- Va de la mano con las anotaciones de @PostConstruct y @PreDestroy -->
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
 	
 	<bean id="mundo" class="com.SFT.beans.Mundo">
 		<property name="saludo" value="Hola Mundo!"></property>
