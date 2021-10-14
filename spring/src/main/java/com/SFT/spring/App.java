@@ -4,11 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.SFT.beans.Barcelona;
-import com.SFT.beans.Ciudad;
 import com.SFT.beans.Jugador;
-import com.SFT.beans.Mundo;
-import com.SFT.beans.Persona;
 import com.SFT.interfaces.IEquipo;
 
 public class App {
