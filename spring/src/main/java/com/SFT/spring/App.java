@@ -20,7 +20,7 @@ public class App {
 		Mundo m = (Mundo) appContext.getBean("mundo");
 		System.out.println(m.getSaludo());
 		
-		Persona per = (Persona) appContext.getBean("persona");
+		Persona per = (Persona) appContext.getBean("personaBean2");
 		System.out.println(
 				"ID: " + per.getId() + 
 				", nombre: " + per.getNombre() + 
