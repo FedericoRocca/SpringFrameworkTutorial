@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.SFT.beans.Ciudad;
 import com.SFT.beans.Mundo;
 import com.SFT.beans.Persona;
 
@@ -21,12 +22,19 @@ public class App {
 		System.out.println(m.getSaludo());
 		
 		Persona per = (Persona) appContext.getBean("personaBean2");
+		
+		String nombresCiudades = "";
+		for(Ciudad ciu : per.getPais().getCiudades())
+		{
+			nombresCiudades += ciu.getNombre() + ", ";
+		}
+		
 		System.out.println(
 				"ID: " + per.getId() + 
 				", nombre: " + per.getNombre() + 
 				", apodo: " + per.getApodo() + 
 				", pais: " + per.getPais().getNombre() + 
-				", ciudad: " + per.getPais().getCiudad().getNombre()
+				", ciudades: " + nombresCiudades
 				);
 		
 		((ConfigurableApplicationContext)appContext).close();
