@@ -1,8 +1,5 @@
 package com.SFT.beans;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
@@ -90,12 +87,12 @@ public class Persona implements InitializingBean, DisposableBean{
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("Antes de inicializar el bean");
+		System.out.println("After persona");
 	}
 
 	@Override
 	public void destroy() throws Exception {
-		System.out.println("Bean a punto de ser destruido");
+		System.out.println("Destroy persona");
 	}
 
 }

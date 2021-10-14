@@ -13,9 +13,6 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/SFT/xml/beans.xml");
 	
-		Mundo m = (Mundo) appContext.getBean("mundo");
-		System.out.println(m.getSaludo());
-		
 		Persona per = (Persona) appContext.getBean("persona");
 		
 		Ciudad ciu = (Ciudad) appContext.getBean("ciudad");
