@@ -6,5 +6,11 @@
 	<bean id="mundo" class="com.SFT.beans.Mundo">
 		<property name="saludo" value="Hola Mundo!"></property>
 	</bean>
+	
+	<bean id="persona" class="com.SFT.beans.Persona">
+		<constructor-arg index="0" type="int" value="1"></constructor-arg>
+		<constructor-arg index="1" value="nombre loco"></constructor-arg>
+		<constructor-arg index="2" value="apodo loco"></constructor-arg>
+	</bean>
 
 </beans>
