@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	
+	
+	default-init-method="initBean"
+	default-destroy-method="destroyBean"
+	><!-- Configuracion global -->
+	
+	
 	<bean id="mundo" class="com.SFT.beans.Mundo">
 		<property name="saludo" value="Hola Mundo!"></property>
 	</bean>
 	
-	<bean id="persona" class="com.SFT.beans.Persona" autowire="byName" scope="singleton" lazy-init="true"> 
+	<bean id="persona" class="com.SFT.beans.Persona" autowire="byName"> 
 		<!-- Por defecto el scope es byName -->
 		<!-- Por defecto el scope es singleton -->
-		<!-- Por defecto el lazy-init es true y solo aplicable a singleton y se aplica al getBean-->
+		<!-- Por defecto el lazy-init es true y solo aplicable a singleton y se aplica al getBean -->
+		<!-- El destroy-method se llama con el ((ConfigurableApplicationContext)appContext).close();, si no se llama al close no se ejecuta el destroy-method -->
+		<property name="apodo" value="apodo persona"></property>
 	</bean>
 	
 	<bean id="pais" class="com.SFT.beans.Pais">
