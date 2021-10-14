@@ -7,9 +7,10 @@
 		<property name="saludo" value="Hola Mundo!"></property>
 	</bean>
 	
-	<bean id="persona" class="com.SFT.beans.Persona" autowire="byName" scope="singleton"> 
-	<!-- Por defecto el scope es byName -->
-	<!-- Por defecto el scope es singleton -->
+	<bean id="persona" class="com.SFT.beans.Persona" autowire="byName" scope="singleton" lazy-init="true"> 
+		<!-- Por defecto el scope es byName -->
+		<!-- Por defecto el scope es singleton -->
+		<!-- Por defecto el lazy-init es true y solo aplicable a singleton y se aplica al getBean-->
 	</bean>
 	
 	<bean id="pais" class="com.SFT.beans.Pais">
