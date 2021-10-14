@@ -7,38 +7,18 @@
 		<property name="saludo" value="Hola Mundo!"></property>
 	</bean>
 	
-	<bean id="persona" class="com.SFT.beans.Persona" name="personaBean2">
-		 <property name="pais">
-			 <bean id="pais" class="com.SFT.beans.Pais">
-				<property name="nombre" value="Perú"></property>
-				<property name="ciudades">
-					<list>
-						<ref bean="ciudad1"/>
-						<ref bean="ciudad2"/>
-						<ref bean="ciudad3"/>
-					</list>
-				</property>
-			</bean>
-		 </property>
+	<bean id="persona" class="com.SFT.beans.Persona" autowire="byName">
 		 <property name="id" value="1"></property>
 		 <property name="nombre" value="nombre loco"></property>
 		 <property name="apodo" value="apodo loco"></property>
 	</bean>
 	
-	<bean id="ciudad1" class="com.SFT.beans.Ciudad">
+	<bean id="pais" class="com.SFT.beans.Pais">
+		<property name="nombre" value="Perú"></property>
+	</bean>
+	
+	<bean id="ciudad" class="com.SFT.beans.Ciudad">
 		<property name="nombre" value="Lima"></property>
 	</bean>
-	
-	<bean id="ciudad2" class="com.SFT.beans.Ciudad">
-		<property name="nombre" value="Piura"></property>
-	</bean>
-	
-	<bean id="ciudad3" class="com.SFT.beans.Ciudad">
-		<property name="nombre" value="Chiclayo"></property>
-	</bean>
-	
-	
-	
-	<alias name="persona" alias="personaBean"/>
 	
 </beans>
