@@ -9,7 +9,7 @@
 	<!-- default-destroy-method="destroyBean" -->
 	
 	<!-- Va de la mano con las anotaciones de @PostConstruct y @PreDestroy -->
-	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
+	<!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>  -->
 	
 	<bean id="mundo" class="com.SFT.beans.Mundo">
 		<property name="saludo" value="Hola Mundo!"></property>

@@ -3,7 +3,10 @@ package com.SFT.beans;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class Persona {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Persona implements InitializingBean, DisposableBean{
 	
 	private int id;
 	private String nombre;
@@ -11,17 +14,19 @@ public class Persona {
 	private Pais pais;
 	private Ciudad ciudad;
 	
-	@PostConstruct
-	private void initBean()
-	{
-		System.out.println("Antes de inicializar el bean");
-	}
-	
-	@PreDestroy
-	private void destroyBean()
-	{
-		System.out.println("Bean a punto de ser destruido");
-	}
+	/*
+		@PostConstruct
+		private void initBean()
+		{
+			System.out.println("Antes de inicializar el bean");
+		}
+		
+		@PreDestroy
+		private void destroyBean()
+		{
+			System.out.println("Bean a punto de ser destruido");
+		}
+	*/
 	
 	public Pais getPais() {
 		return pais;
@@ -81,6 +86,16 @@ public class Persona {
 
 	public String getApodo() {
 		return apodo;
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Antes de inicializar el bean");
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Bean a punto de ser destruido");
 	}
 
 }
