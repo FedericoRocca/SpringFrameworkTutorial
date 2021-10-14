@@ -1,36 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	>
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<!-- Configuracion global que puede colgar en el tag <beans>-->
-	<!-- default-init-method="initBean" -->
-	<!-- default-destroy-method="destroyBean" -->
-	
-	<!-- Va de la mano con las anotaciones de @PostConstruct y @PreDestroy -->
-	<!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>  -->
-	
-	<bean class="com.SFT.beans.FedeBeanPostProcessor"></bean>
-	
-	<bean id="mundo" class="com.SFT.beans.Mundo">
-		<property name="saludo" value="Hola Mundo!"></property>
+	<bean id="messi" class="com.SFT.beans.Jugador">
+		<property name="numero" value="10"></property>
+		<property name="nombre" value="Lionel Messi"></property>
+		<property name="equipo" ref="barcelona"></property>
 	</bean>
 	
-	<bean id="persona" class="com.SFT.beans.Persona" autowire="byName"> 
-		<!-- Por defecto el scope es byName -->
-		<!-- Por defecto el scope es singleton -->
-		<!-- Por defecto el lazy-init es true y solo aplicable a singleton y se aplica al getBean -->
-		<!-- El destroy-method se llama con el ((ConfigurableApplicationContext)appContext).close();, si no se llama al close no se ejecuta el destroy-method -->
-		<property name="apodo" value="apodo persona"></property>
-	</bean>
-	
-	<bean id="pais" class="com.SFT.beans.Pais">
-		<property name="nombre" value="Perú"></property>
-	</bean>
-	
-	<bean id="ciudad" class="com.SFT.beans.Ciudad">
-		<property name="nombre" value="Lima"></property>
-	</bean>
+	<bean id="barcelona" class="com.SFT.beans.Barcelona"></bean>
+	<bean id="juventus" class="com.SFT.beans.Juventus"></bean>
 	
 </beans>
