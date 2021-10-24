@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.SFT.interfaces.IEquipo;
 
-@Service
+@Component
 public class Barcelona implements IEquipo{
 
 	@Override

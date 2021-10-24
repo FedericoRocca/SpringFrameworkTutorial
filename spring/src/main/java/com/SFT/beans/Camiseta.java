@@ -1,8 +1,14 @@
 package com.SFT.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Camiseta {
 	private int id;
 	private int numero;
+	
+	@Autowired
 	private Marca marca;
 	
 	public int getId() {
