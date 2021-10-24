@@ -2,13 +2,17 @@ package com.SFT.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.SFT.interfaces.IEquipo;
 
 @Component
 public class Jugador {
+	@Value("3")
 	private int id;
+	
+	@Value("Messi")
 	private String nombre;
 
 	@Autowired
