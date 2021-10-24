@@ -2,9 +2,8 @@ package com.SpringFrameworkTutorial.springBD;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.SpringFrameworkTutorial.beans.Marca;
-import com.SpringFrameworkTutorial.service.ServiceMarca;
+import com.SpringFrameworkTutorial.beans.Jugador;
+import com.SpringFrameworkTutorial.service.ServiceJugador;
 
 /**
  * Hello world!
@@ -14,15 +13,11 @@ public class App
 {
     public static void main( String[] args )
     {
-
-    	Marca marca = new Marca();
-    	marca.setId(2);
-    	marca.setNombre("marca 2");
-    	
     	ApplicationContext appContext = new ClassPathXmlApplicationContext("com/SpringFrameworkTutorial/xml/beans.xml");
-    	ServiceMarca sm = (ServiceMarca)appContext.getBean("serviceMarcaImpl");
+    	ServiceJugador sJugador = (ServiceJugador) appContext.getBean("serviceJugadorImpl");
+    	Jugador jugador1= (Jugador) appContext.getBean("jugador1");
     	try {
-			sm.registrar(marca);
+			sJugador.registrar(jugador1);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

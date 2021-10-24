@@ -13,5 +13,28 @@
 	    <property name="username" value="root"></property>
 	    <property name="password" value="123"></property>
     </bean>
+    
+    <bean id="marca3" class="com.SpringFrameworkTutorial.beans.Marca">
+        <property name="id" value="3"></property>
+        <property name="nombre" value="marca 3"></property>
+    </bean>
+    
+    <bean id="equipo1" class="com.SpringFrameworkTutorial.beans.Equipo">
+        <property name="id" value="1"></property>
+        <property name="nombre" value="Barcelona"></property>
+    </bean>
+    
+    <bean id="camiseta1" class="com.SpringFrameworkTutorial.beans.Camiseta">
+        <property name="id" value="1"></property>
+        <property name="numero" value="10"></property>
+        <property name="marca" ref="marca3"></property>
+    </bean>
+    
+    <bean id="jugador1" class="com.SpringFrameworkTutorial.beans.Jugador">
+        <property name="id" value="2"></property>
+        <property name="nombre" value="Messi"></property>
+        <property name="equipo" ref="equipo1"></property>
+        <property name="camiseta" ref="camiseta1"></property>
+    </bean>
 
 </beans>
